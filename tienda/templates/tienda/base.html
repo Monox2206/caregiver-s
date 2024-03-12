@@ -1,0 +1,121 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ℕ𝕒𝕟𝕟𝕪'𝕤 </title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'tienda/favicon_io/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'tienda/favicon_io/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'tienda/favicon_io/favicon-16x16.png' %}">
+    <!--<link rel="manifest" href="{% static 'tienda/favicon_io/site.webmanifest' %}">-->
+
+    <link rel="stylesheet" href="{% static 'tienda/css/styles.css' %}" /> 
+    <link rel="stylesheet" href="{% static 'tienda/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'tienda/icons-main/font/bootstrap-icons.min.css' %}" />
+</head>
+<body style="background-color:#B5B5B5">
+  <nav class="navbar navbar-expand-sm navbar bg-light" style="padding-right:0.5rem;border-bottom: 1px solid black;">
+    <span class="container-fluid">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <img src="{% static 'tienda/img/logo.png' %}" style="width:40px">
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'tienda:inicio' %}">Inicio</a>
+            </li>
+            {% if request.session.logueo.nombre_rol == "Administrador" %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'tienda:servicios' %}">Servicios</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'tienda:usuarios' %}">Nannys</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'tienda:padres' %}">Padres</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'tienda:ninoabuelos' %}">Niños/Abuelos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'tienda:pagos' %}">Pagos</a>
+            </li>
+            {% endif %}
+            {% if request.session.logueo.nombre_rol != "Administrador" %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'tienda:nosotros' %}">Nosotros</a>
+            </li>
+            {% endif %}
+        </ul>
+
+        <!-- Elementos a la derecha -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                    <button class="btn btn-outline-light"  type="submit">Buscar</button>
+                </form>
+            </li>
+            
+            {% if request.session.logueo.nombre_rol == None %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'tienda:login' %}">Iniciar sesión</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'tienda:signUp' %}">Registrarse</a>
+            </li>
+            {% endif %}
+            {% if request.session.logueo.nombre_rol != None %}
+            <li class="nav-item">Bienvenido {{ request.session.logueo.nombre }} ({{ request.session.logueo.nombre_rol }})<img style="height: 50px;border-color:#6c63ff;border-style: double;" src="{{ request.session.logueo.foto }}"></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-arrow"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url 'tienda:perfil' %}">Perfil</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="{% url 'tienda:logout' %}">Cerrar sesión</a></li>
+                </ul>
+            </li>
+            <li class="nav-item" style="width:130px">    </li>
+
+            {% endif %}
+        </ul>
+    </span>
+</nav>
+
+
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible" role="alert">
+            <div>{{ message }}</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    {% endif %}
+
+
+
+    {% block contenedor %}
+        ...
+    {% endblock %}
+
+
+
+
+
+    <footer class="fixed-bottom">
+        <div class="row">
+        <div class="text-lg-end" style="color:black;font-size:20px">Copyright - Colombia 2024 |      Contactanos a nanny's@gmail.com 
+        </div>
+    </footer>
+
+    <!-- JS include here -->
+    <script src="{% static 'tienda/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'tienda/js/jquery-3.7.1.min.js' %}"></script>
+    <script src="{% static 'tienda/js/library.js' %}"></script>
+
+    <!-- fin - JS include -->
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends 'tienda/base.html' %}
+
+{% load static %}
+
+{% block titul %} Login {% endblock %}
+
+{% block contenedor %}
+
+<!-- Aqui se mostrara la informacion de el equipo de programacion -->
+
+<div id="nosotros">
+
+        <h3> ¿ Quienes Somos ?</h3>
+    <div>
+        <p style="text-align:right; width:70%;margin-top:70px;font-size:2rem;margin-left:50px"> Nanny's es una pagina web diseñada por el equipo de trabajo Mamitas, cuyo tiempo en el  mercado es poco debido a que este es unos de sus primeros proyectos , este equipo inicialmente ccontaba con 6 miembros pero con el paso del tiempo se redujo a 2 miembros. </p>
+        <img src="{% static 'tienda/img/logo.png' %}" style="width: 300px;margin-left:73%;margin-top:-250px" alt="">
+        
+    </div>   
+
+    <div>
+        <h3 > ¿ Cómo surgió Nanny's ?</h3>
+        <p style="text-align:center; width:80%;margin-top:70px;font-size:2rem;margin-left:auto;margin-right:auto"> Nuestra propuesta para el proyecto Nanny surge de la necesidad de abordar los desafíos de tiempo a los que se enfrentan los padres o cuidadores de adultos mayores, quienes a menudo tienen limitaciones para dedicar el tiempo necesario al cuidado de sus seres queridos. Como equipo de desarrollo, aspiramos a crear una aplicación que ofrezca una solución segura y confiable a estos desafíos.</p>
+        
+    </div>    
+     
+<!-- Se mostraran las avatars y nombres del equipo de trabajo-->
+    <h3 style="padding-top:50px"> Nanny's Teamwork</h3>
+        
+    <div style="display: flex;">
+        <div class="card" style="width: 18rem; margin-left: auto;margin-right:100px">
+            <img src="{% static 'tienda/img/Manuel-s.jpeg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Juan Manuel</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Desarrolador</li>
+                <li class="list-group-item">Analista</li>
+            </ul>
+        
+        </div>
+    
+       <div class="card" style="width: 18rem;margin-right:auto;padding:10px">
+            <img src="{% static 'tienda/img/David-s.jpeg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">David Martínez</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Desarrolador</li>
+                <li class="list-group-item">Analista</li>
+            </ul>
+        
+        </div>
+    </div>
+        </div>
+
+</div>
+{% endblock %}

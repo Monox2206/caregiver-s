@@ -1,0 +1,43 @@
+{% extends 'tienda/base.html' %}
+
+{% load static %}
+
+{% block titul %} child care {% endblock %}
+
+{% block contenedor %}
+
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div> 
+    {% endfor %} 
+{% endif %}
+    
+    <h2 class="text-center" style="margin-top:20px;color:white">Rellena la información para Crear tu servicio</h2>
+
+    <form class="w-50 shadow mx-auto p-4 m-3" method="post" action="{% url 'tienda:guardar_servicio' %}">
+        {% csrf_token %}
+        
+        Nombre: <input type="text" name="nombre" class="form-control my-2" required>
+
+        Precio: <input type="text" name="precio" class="form-control my-2" required>
+
+        Tipo: 
+        <p style="text-align:center"> Indica 1 para menor de edad / 2 para ciudadano de tercera edad / 3 para un cuidado especial</p>
+        
+        <input type="number" name="tipo" class="form-control my-2" required>
+
+        Tu correo: 
+        <input type="text" name="propietario" class="form-control my-2" required>
+
+        Descripción:
+        <textarea class="form-control my-2" name="descripcion">
+
+        </textarea>
+        
+        <input type="submit" value="Guardar" class="btn btn-primary">
+
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'tienda/base.html' %}
+
+{% load static %}
+
+{% block titul %} all cares {% endblock %}
+
+{% block contenedor %}
+
+    <div class="container">
+        <div class="row">
+    {% for servicio in servicios %}
+        <div class="col-sm-4">
+            <div   class="item" style="text-align:center; background-color:grey;border-color:white;border-style:groove;margin:20px;color:white;padding:10px; width:300px">
+                    {% comment %} <img src="{% static 'tienda/img/nanny.jpg' %}" style="width: 300px;height:500px" alt=""> {% endcomment %}
+                    <p>{{ servicio.nombre }}</p>
+                    <p>{{ servicio.precio }}</p>
+                    <p>{{ servicio.tipo }}</p>  
+                    <p>{{ servicio.propietario }}</p>  
+                    <p>{{ servicio.descripcion }}</p>  
+                    <a class="btn" type="button" style="background-color:#6c63ff;color:white;border-color:black" href={% url 'tienda:contratar' id=servicio.id %}> Contratar </a>
+            </div> 
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}

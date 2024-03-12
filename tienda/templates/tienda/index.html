@@ -1,0 +1,412 @@
+{% extends 'tienda/base.html' %}
+
+{% load static %}
+
+{% block titul %} Inicio {% endblock %}
+
+{% block contenedor %}
+
+   
+{% if request.session.logueo.nombre_rol == None %}
+
+<div id="Jumbotron">
+<h1>Cuidando con el alma y el corazón</h1>
+<p>Ofrecemos servicios confiables y dedicados para el cuidado de sus seres queridos.</p>
+<a href="#" id="ServiciosBanner" class="btn btn-outline-light btn-lg">¡Encuentra una niñera!</a>
+</div>
+<!-- Sección de Servicios -->
+<!-- Inicio Acordéon -->
+<section id="Acordeon" class="container d-flex my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'tienda/img/plannene.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Plan Niños</h5>
+                    <ul class="card-text">
+                        <li>Cuidados generales del niño.</li>
+                        <li>Orientación creativa con su educación.</li>
+                        <li>Actividades recreativas para el control del cortisol de los niños.</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-outline-dark">Conoce más sobre este plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'tienda/img/PlanAdolescentes.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Plan Adolescentes</h5>
+                    <ul class="card-text">
+                        <li>Cuidados generales del jóven.</li>
+                        <li>Orientación creativa con su educación.</li>
+                        <li>Actividades recreativas para el control del cortisol de los jóvenes.</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-outline-dark">Conoce más sobre este plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="{% static 'tienda/img/PlanTerceraEdad.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Plan Tercera Edad</h5>
+                    <ul class="card-text">
+                        <li>Cuidados generales del adulto mayor.</li>
+                        <li>Acompañamiento.</li>
+                        <li>Activades que ayudan al control del estrés del adulto mayor.</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-outline-dark">Conoce más sobre este plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fin del Acordeón -->
+<!-- Fin sección de servicios -->
+
+<!-- Inicio Cartas Niñeras -->
+<section id="CartasBackground" class="container-fluid justify-content-center">
+    <div class="row align-items-end row-d-flex justify-content-center">
+        <div id="Cartas" class="card">
+            <img src="{% static 'tienda/img/Mujer2.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Susana Herrera</h5>
+                <p class="card-text">"Niñera apasionada por el cuidado amoroso y el crecimiento infantil."</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Niños
+                    <span class="badge bg-dark rounded-pill">1-11 Años</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Adolescentes
+                    <span class="badge bg-dark rounded-pill">12-18 Años</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Tercera Edad
+                    <span class="badge bg-dark rounded-pill">60 +</span>
+                </li>
+                <div class="card-footer">
+                    <div class="d-grid text-center">
+                        <a href="InterfazNanny.html">
+                            <button type="button" class="btn btn-outline-dark">Ver Perfil</button>
+                        </a>
+                    </div>
+                </div>
+        </div>
+        <div id="Cartas" class="card">
+            <img src="{% static 'tienda/img/Mujer5.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">María Hurtado</h5>
+                <p class="card-text">
+                    "Guardiana de sonrisas y aventuras, experta en cuidar y educar con amor. ¡Listos para explorar
+                    el mundo juntos!"</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Niños
+                    <span class="badge bg-dark rounded-pill">1-11 Años</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Adolescentes
+                    <span class="badge bg-dark rounded-pill">12-18 Años</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Tercera Edad
+                    <span class="badge bg-dark rounded-pill">60 +</span>
+                </li>
+            </ul>
+            <div class="card-footer">
+                <div class="d-grid text-center">
+                    <a href="InterfazNanny.html">
+                        <button type="button" class="btn btn-outline-dark">Ver Perfil</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="Cartas" class="card">
+            <img src="{% static 'tienda/img/Mujer3.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Sandra Martinez</h5>
+                <p class="card-text">
+                    "Niñera creativa y afectuosa, garantizando sonrisas y seguridad."</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Niños
+                    <span class="badge bg-dark rounded-pill">1-11 Años</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Adolescentes
+                    <span class="badge bg-dark rounded-pill">12-18 Años</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Tercera Edad
+                    <span class="badge bg-dark rounded-pill">60 +</span>
+                </li>
+            </ul>
+            <div class="card-footer">
+                <div class="d-grid text-center">
+                    <a href="InterfazNanny.html">
+                        <button type="button" class="btn btn-outline-dark">Ver Perfil</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fin Cartas Niñeras -->
+
+<!-- Inicio Carrousel Experiencias -->
+<section class="container-fluid my-5">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'tienda/img/Experiencia1.jpg' %}" class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Lorena Gutierrez</h5>
+                    <p>¡Servicios recomendadísimos, la seguridad y cuidado que brindan en sus planes son
+                        espectaculares!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'tienda/img/Experiencia2.jpg' %}" class="d-block w-100">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Maria Milena</h5>
+                    <p>"¡Excelente niñera! Cuidó a nuestros hijos con amor y profesionalismo. Altamente
+                        recomendada."</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+</section>
+<!-- Fin Carrousel Experiencias -->
+
+<!-- Formulario de contacto -->
+<section id="Contacto" class="container-fluid my-5">
+    <h1>¡Si quieres que te contactemos,<br>deja tu información!</h1>
+    <section class="container d-flex ">
+        <form class="Contacto2">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Escribe tu nombre completo">
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="number" class="form-control" id="telefono"
+                    placeholder="Escribe tu número de teléfono móvil">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" placeholder="Escribe tu correo electrónico">
+            </div>
+            <div class="mb-3">
+                <label for="ciudad" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="ciudad"
+                    placeholder="Escribe la ciudad donde te encuentras ubicado">
+            </div>
+            <div>
+                <button id="EnviarFormulario" type="submit" class="btn btn-light">Enviar Formulario</button>
+            </div>
+        </form>
+    </section>
+</section>
+<!-- Fin de formulario de contacto-->
+
+{% endif %}
+
+
+    <!-- Sesion iniciada como usuario-->
+
+   
+{% if request.session.logueo.nombre_rol == 'Padre' %}
+
+<div class="container" style="text-align:center">
+    <div class="row" style="margin-top:2%;t" >
+        <div class="col-md-4" >
+            <div class="card text-center" style="background-color:grey; color:white;">
+                <div class="card-header">
+                    Child Care
+                    </div>
+
+                    <div class="card-body" >
+                    <img src="{% static 'tienda/img/kid.png' %}" style="width: 350px;height:500px;" alt="">
+                    <h5 class="card-title">Cuidado para niños </h5>
+                    <p class="card-text">Encuentra una nanny de confianza para que brinde cuidados a tus seres queridos </p>
+                    <a href="{% url 'tienda:childCare' %}" class="btn" style="background-color:#6c63ff;color:white;border-color:black";>Ver más</a>
+
+                </div>
+                    </div>          
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center" style="background-color:grey; color:white">
+                <div class="card-header">
+                    Senior Care
+                    </div>
+                    <div class="card-body">
+                    <img src="{% static 'tienda/img/grandma.jpg' %}" style="width: 350px; height:500px" alt="">
+                    <h5 class="card-title">Cuidado ciudadanos de Tercera edad </h5>
+                    <p class="card-text">Encuentra una nanny de confianza para que brinde cuidados a tus seres queridos </p>
+                    <a href="{% url 'tienda:seniorCare' %}" class="btn" style="background-color:#6c63ff;color:white;border-color:black";>Ver más</a>
+
+                    </div>
+                    </div>          
+                </div>
+        <div class="col-md-4">
+         <div class="card text-center" style="background-color:grey; color:white">
+            <div class="card-header">
+                Special Care
+                </div>
+                <div class="card-body">
+                <img src="{% static 'tienda/img/especial.png' %}" style="width: 350px; height:500px" alt="">
+                <h5 class="card-title">Cuidado que requieren tratos especiales </h5>
+                <p class="card-text">Encuentra una nanny de confianza para que brinde cuidados a tus seres queridos </p>
+                <a href="{% url 'tienda:specialCare' %}" class="btn" style="background-color:#6c63ff;color:white;border-color:black;">Ver más</a>
+                </div>
+                </div>
+            </div>
+
+
+</div>
+
+
+<a href="{% url 'tienda:allCare' %}" class="btn" style="background-color:#6c63ff;color:white;border-color:black;width:500px;margin:2%"> Todos los Servicios</a>
+
+</div>   
+<button class="btn" style="color:white;background-color:grey;padding:2px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"> <i class="bi bi-question-square"></i></button>
+
+
+<div class="offcanvas offcanvas-start" style="color:white;background-color:grey;" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Más información sobre los tipos de cuidados</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <h4>Child Care</h4>
+        <p>
+          Este servicio está diseñado para cuidar niños menores de cierta edad, generalmente desde bebés hasta adolescentes.
+          Los proveedores de este servicio están capacitados para satisfacer las necesidades específicas de los niños, como la alimentación, el cambio de pañales, la supervisión durante el juego y la ayuda con la tarea escolar.
+          El objetivo principal es proporcionar un entorno seguro y estimulante donde los niños puedan crecer, aprender y desarrollarse de manera saludable.
+        </p>
+      
+        <h4>Senior Care</h4>
+        <p>
+          Este servicio se enfoca en cuidar a adultos mayores que pueden necesitar asistencia en actividades diarias debido a la edad avanzada, la fragilidad física o condiciones médicas crónicas.
+          Los proveedores de cuidado de adultos mayores pueden ayudar con tareas como la administración de medicamentos, la preparación de comidas, la higiene personal, la movilidad y la compañía.
+          El objetivo es brindar apoyo y atención compasiva para mejorar la calidad de vida y mantener la independencia tanto como sea posible para los adultos mayores.
+        </p>
+      
+        <h4>Special Care</h4>
+        <p>
+          Este servicio está diseñado para atender las necesidades de personas que requieren cuidados especiales debido a condiciones médicas crónicas, discapacidades o enfermedades graves.
+          Puede incluir el cuidado de un familiar adulto con enfermedades como el Alzheimer, el Parkinson u otras enfermedades crónicas, así como el cuidado de niños con necesidades especiales, como autismo o trastornos del desarrollo.
+          Los proveedores de este servicio suelen tener capacitación especializada en el manejo de condiciones médicas específicas, terapias especializadas y técnicas de cuidado personalizado para garantizar el bienestar y la seguridad del cliente.
+        </p>
+    </div>
+  </div>
+
+</div>
+
+
+{% endif %}
+
+
+
+<!-- La landing del administrador -->
+
+{% if request.session.logueo.nombre_rol == 'Administrador' %}
+
+<div class="container-fluid" style="display:flex;flex-direction:row">
+
+
+    <div class="jumbotron" style="width:30%; background-color:white;margin:2%;text-align:center;padding-bottom:10px">
+    <img src="{% static 'tienda/img/nanny.jpg' %}" style="width: 300px;height:500px" alt="">
+    <p> Revisar el modulo Nannys</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'tienda:usuarios' %}" role="button">Inspeccionar</a>
+    </div>
+
+    <div class="jumbotron" style="width:30%; background-color:white;margin:2%;text-align:center">
+        <img src="{% static 'tienda/img/padre.jpg' %}" style="width: 300px;height:500px" alt="">
+        <p> Revisar el modulo Acudientes</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'tienda:padres' %}" role="button">Inspeccionar</a>
+        </div>
+
+    <div class="jumbotron" style="width:30%; background-color:white;margin:2%;text-align:center">
+    <img src="{% static 'tienda/img/nino.png' %}" style="width: 300px;height:500px" alt="">
+    <p> Revisar el modulo Niños/Abuelos</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'tienda:ninoabuelos' %}" role="button">Inspeccionar</a>
+    </div>
+
+    <div class="jumbotron" style="width:30%; background-color:white;margin:2%;text-align:center">
+        <img src="{% static 'tienda/img/pagos.png' %}" style="width: 300px;height:500px" alt="">
+        <p> Revisar el modulo Pagos</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'tienda:pagos' %}" role="button">Inspeccionar</a>
+        </div>
+        
+
+    <div class="jumbotron" style="width:30%; background-color:white;margin:2%;text-align:center">
+        <img src="{% static 'tienda/img/services.png' %}" style="width: 300px;height:500px" alt="">
+        <p> Revisar el modulo Servicios</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'tienda:servicios' %}" role="button">Inspeccionar</a>
+        </div>
+        
+                
+        
+
+{% endif %}
+
+
+<!-- La landing del administrador -->
+
+{% if request.session.logueo.nombre_rol == 'Nanny' %}
+
+<div class="container" style="text-align:center;margin-top:50px;">
+    <div class="row">
+      <div class="col-md-8" style="margin-left:auto;margin-right:auto;">
+        <div class="card">
+            <img src="{% static 'tienda/img/servicio.jpeg' %}" style="width: 70%; height:70%;margin-left:auto;margin-right:auto" alt="">
+
+          <div class="card-body">
+            <h5 class="card-title">Crea un servicio</h5>
+            <p class="card-text">Si creas un servicio podrás darte a conocer y conseguir clientes.</p>
+            <a href="{% url 'tienda:nannyServicio' %}" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+  
+
+
+{% endif %}
+
+{% endblock %}

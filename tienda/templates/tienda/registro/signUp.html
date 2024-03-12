@@ -1,0 +1,49 @@
+{% extends 'tienda/base.html' %}
+
+{% load static %}
+
+{% block titul %} sign Up {% endblock %}
+
+{% block contenedor %}
+
+
+    {% if messages %}
+
+        {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div> 
+        {% endfor %} 
+    {% endif %}
+    
+
+    <form class="w-50 shadow mx-auto p-4 m-3" method="post" style="border: 1px solid white;" action="{% url 'tienda:guardar_usuario' %}">
+        {% csrf_token %}
+
+        <h2 class="text-center">Crea Tu Perfil</h2>
+
+
+        Nombre: <input type="text" name="nombre" class="form-control my-2" required>
+
+        Apellido: <input type="text" name="apellido" class="form-control my-2" required>
+
+        Nick: <input type="text" name="nick" class="form-control my-2" required placeholder=>
+
+        Correo: <input type="text" name="correo" class="form-control my-2" required>
+
+        Contraseña: <input type="text" name="password" class="form-control my-2" required>
+
+        Rol:
+        <p style="text-align:center"> Indica 1 para Registrarte como Padre / 2 para Nanny</p>
+
+        <input type="text" name="rol" class="form-control my-2" required>
+
+        Descripción:
+        <textarea class="form-control my-2" name="descripcion"  >
+
+        </textarea>
+        
+        <input type="submit" value="Crear perfil" class="btn btn-primary">
+
+    </form>
+
+{% endblock %}
+    
